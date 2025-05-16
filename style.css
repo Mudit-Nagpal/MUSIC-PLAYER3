@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('project.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.progress-container {
+    background: rgba(255, 255, 255, 0.3);
+}
+.container {
+    width: 450px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+}
+.music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+    background-color: #ddd;
+}
+.img-container img.play {
+    animation-play-state: running;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.music-info {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 0 0 5px #0066ff, 0 0 10px #007bff, 0 0 15px #0073ff;
+    transition: text-shadow 0.3s ease;
+}
+.title:hover {
+    text-shadow: 0 0 10px #0040ff, 0 0 20px #0015ff, 0 0 30px #0051ff;
+}
+.artist {
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 0 3px #ffffff;
+    animation: pulse 2s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { text-shadow: 0 0 3px #f2ff00; }
+    50% { text-shadow: 0 0 8px #d9ff00; }
+    100% { text-shadow: 0 0 3px #f8ef00; }
+}
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgb(0, 170, 255);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: width 0.1s linear;
+    background-color: #18119a;
+}
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: lightgrey;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+.controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: linear-gradient(45deg, #007bff, #00aaff); 
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 170, 255, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+.controls button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.7), 0 0 12px rgba(0, 102, 255, 0.5); 
+    background: linear-gradient(45deg, #0066ff, #00ccff); 
+}
+.controls button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.controls .play-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #007bff, #00aaff); 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 170, 255, 0.4);
+}
+.controls .play-btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.7), 0 0 15px rgba(0, 102, 255, 0.5);
+    background: linear-gradient(45deg, #0066ff, #00ccff);
+}
+.controls button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 10px rgba(0, 170, 255, 0.5); 
+}
+.controls button span {
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 3px rgba(0, 170, 255, 0.5); 
+}
+.controls .play-btn span {
+    font-size: 24px;
+}
+@media screen and (max-width: 50px) {
+    .container {
+        width: 95%;
+    }
+    .img-container {
+        width: 150px;
+        height: 150px;
+    }
+    .controls button {
+        margin: 0 10px;
+        font-size: 20px;
+    }
+    .controls .play-btn {
+        font-size: 30px;
+    }
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 10px gold }
+    50% { text-shadow: 0 0 20px gold }
+    100% { text-shadow: 0 0 10px gold }
+}
+h1 {
+    animation: glow 3.0s infinite alternate ease-in-out;
+}

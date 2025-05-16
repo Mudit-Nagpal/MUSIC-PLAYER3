@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1 style="color: rgb(255, 255, 255);"> Music Player Producer: Mudit Nagpal</h1><br>
+    <div class="container"> <div class="music-container"><div class="img-container">
+     <img src="https://via.placeholder.com/300" alt="Album Cover" id="cover"></div>
+            <div class="music-info">
+                <h2 class="title" id="title"></h2><h3 class="artist" id="artist"></h3>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div></div>
+                <div class="time-container">
+                    <span id="current-time">0.00</span>
+                    <span id="duration">0.00</span>
+                </div></div>
+            <div class="controls">
+                <button class="prev-btn" id="prev-btn"><span>⏪</span></button>
+                <button class="play-btn" id="play-btn"><span>▶️</span></button>
+                <button class="next-btn" id="next-btn"><span>⏭️</span></button>
+            </div>
+            <audio class="audio"></audio>
+        </div></div>
+    <script src="script.js"></script></body></html>
